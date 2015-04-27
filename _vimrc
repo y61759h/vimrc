@@ -53,7 +53,7 @@ set backspace=2
 "set bs=eol,start,indent  "backspace
 
 " gf命令
-set path+=D:/msys32/mingw32/i686-w64-mingw32/include,D:/msys32/mingw32/include/c++/4.8.2,D:/msys32/mingw32/include,D:/msys32/mingw32/lib/gcc/i686-w64-mingw32/4.8.2/include
+set path+=D:/msys32/mingw32/i686-w64-mingw32/include,D:/msys32/mingw32/include/c++/4.9.2,D:/msys32/mingw32/include,D:/msys32/mingw32/lib/gcc/i686-w64-mingw32/4.9.2/include
 
 " cscope setting
 if filereadable("cscope.out")
@@ -126,7 +126,7 @@ let g:clang_use_library = 1
 let g:clang_library_path = "D:/msys32/mingw32/bin"
 "let g:clang_user_options = '-ID:/MinGW/include -ID:/MinGW/lib -ID:/MinGW/lib/gcc/mingw32/4.8.1/include/c++ -ID:/MinGW/lib/gcc/mingw32/4.8.1/include/c++/mingw32 -ID:/Qt/4.8.6/include -ID:/Qt/4.8.6/include/Qt -ID:/Qt/4.8.6/include/QtCore -ID:/Qt/4.8.6/include/QtGui -ID:/Qt/4.8.6/include/QtOpenGL -ID:/Qt/4.8.6/include/QtNetwork -ID:/wxWidgets/wxWidgets-2.8.12/include'
 "let g:clang_user_options = '-std=c++11 -ID:/msys32/mingw32/i686-w64-mingw32/include -ID:/msys32/mingw32/include/c++/4.8.2 -ID:/msys32/mingw32/include -ID:/msys32/mingw32/lib/gcc/i686-w64-mingw32/4.8.2/include -ID:/cocos2d-x/cocos/2d'
-let g:clang_user_options = '-std=c++11 -ID:/msys32/mingw32/i686-w64-mingw32/include -ID:/msys32/mingw32/include/c++/4.8.2 -ID:/msys32/mingw32/include -ID:/msys32/mingw32/lib/gcc/i686-w64-mingw32/4.8.2/include -ID:/Qt/Qt5.3.2/5.3/mingw482_32/include  -ID:/Qt/Qt5.3.2/5.3/mingw482_32/include/QtCore -ID:/Qt/Qt5.3.2/5.3/mingw482_32/include/QtGui -ID:/Qt/Qt5.3.2/5.3/mingw482_32/include/QtWidgets -ID:/Qt/Qt5.3.2/5.3/mingw482_32/include/QtOpenGL  -ID:/Qt/Qt5.3.2/5.3/mingw482_32/mkspecs/win32-g++ -D__GNUC__ -DWIN32'
+let g:clang_user_options = '-std=c++11 -ID:/msys32/mingw32/i686-w64-mingw32/include -ID:/msys32/mingw32/include/c++/4.9.2 -ID:/msys32/mingw32/include -ID:/msys32/mingw32/lib/gcc/i686-w64-mingw32/4.9.2/include -ID:/Qt/Qt5.3.2/5.3/mingw482_32/include  -ID:/Qt/Qt5.3.2/5.3/mingw482_32/include/QtCore -ID:/Qt/Qt5.3.2/5.3/mingw482_32/include/QtGui -ID:/Qt/Qt5.3.2/5.3/mingw482_32/include/QtWidgets -ID:/Qt/Qt5.3.2/5.3/mingw482_32/include/QtOpenGL  -ID:/Qt/Qt5.3.2/5.3/mingw482_32/mkspecs/win32-g++ -D__GNUC__ -DWIN32'
 let g:clang_sort_algo = "alpha"
 let g:clang_snippets = 1
 let g:clang_auto_select = 1
@@ -171,6 +171,7 @@ let g:neocomplcache_force_omni_patterns.cpp =
 let g:clang_complete_auto = 0
 "let g:clang_auto_select = 0
 let g:neocomplcache_enable_auto_select = 0
+inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "\<CR>"
 "-----Plugin neocomplcache end-----
 
 
@@ -203,11 +204,18 @@ Plugin 'othree/xml.vim'
 "-----Plugin xml.vim end-----
 
 
-"+++++Plugin xml.vim start+++++
+"+++++Plugin vim-css-color start+++++
 Plugin 'ap/vim-css-color'
 
 let g:cssColorVimDoNotMessMyUpdatetime = 1
-"-----Plugin xml.vim end-----
+"-----Plugin vim-css-color end-----
+
+
+"+++++Plugin pydiction start+++++
+Plugin 'rkulla/pydiction'
+
+let g:pydiction_location = 'C:/Users/Administrator/vimfiles/bundle/pydiction/complete-dict'
+"-----Plugin pydiction end-----
 
 
 call vundle#end(path)        " required
