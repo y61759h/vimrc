@@ -34,7 +34,7 @@ imap {<S-CR> {<CR>}<ESC>O
 
 colorscheme evening
 set ignorecase "检索时忽略大小写
-set smartcase
+"set smartcase
 set noswapfile
 set bufhidden=hide
 set cursorline
@@ -133,7 +133,7 @@ let g:clang_auto_select = 1
 let g:clang_complete_macros = 1
 "let g:clang_complete_copen = 1
 "let g:clang_periodic_quickfix = 1
-"let g:clang_user_options='-stdlib=libc++ -std=c++11  2>NUL || exit 0'
+inoremap <c-x><c-o> <c-x><c-o><c-p>
 "-----Plugin clang_complete end-----
 
 
@@ -216,6 +216,25 @@ Plugin 'rkulla/pydiction'
 
 let g:pydiction_location = 'C:/Users/Administrator/vimfiles/bundle/pydiction/complete-dict'
 "-----Plugin pydiction end-----
+
+
+"+++++Plugin tabular start+++++
+Plugin 'godlygeek/tabular'
+
+"-----Plugin tabular end-----
+
+
+"+++++Plugin jshint start+++++
+Plugin 'walm/jshint.vim'
+
+"-----Plugin jshint end-----
+
+
+"+++++Plugin vim-nodejs-complete start+++++
+Plugin 'myhere/vim-nodejs-complete'
+"Plugin 'myhere/vim-nodejs-complete'	"(补全本地的JS文件)
+
+"-----Plugin vim-nodejs-complete end-----
 
 
 call vundle#end(path)        " required
